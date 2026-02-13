@@ -1413,7 +1413,7 @@ class MolecularDynamics(BaseCalculation):
             self.temp = self.temp_start
 
         # Set velocities to match current temperature
-        if not self.restart:
+        if not self.restart and not self.ensemble =='nve':
             self._set_velocity_distribution()
 
         # Run temperature ramp
